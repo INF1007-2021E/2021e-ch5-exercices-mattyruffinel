@@ -20,15 +20,36 @@ def prime_integer_summation() -> int:
 
 
 def factorial(number: int) -> int:
-    return 0
+    factorial_number=1
+    for n in range(2,number+1):
+        factorial_number *= n
+
+    return factorial_number
 
 
 def use_continue() -> None:
-    pass
+    for i in range(0,11):
+        if i==5:
+            continue
+        print(i)
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    liste_bool = []
+    for liste in groups:
+        if len(liste)>10 or len(liste)<=3:
+            liste_bool.append(False)
+            continue
+        if 25 in liste:
+            liste_bool.append(True)
+            continue
+        if min(liste)<18 or 50 in liste and max(liste)>70:
+            liste_bool.append(False)
+            continue
+        liste_bool.append(True)
+    return liste_bool
+
+
 
 
 def main() -> None:
